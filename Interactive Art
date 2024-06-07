@@ -1,0 +1,20 @@
+let message = "WELCOME TO BATHSPA";
+
+function setup() {
+  createCanvas(800, 400);
+  textSize(32);
+  textAlign(CENTER, CENTER);
+}
+
+function draw() {
+  background(290);
+  
+  // Map the mouse's vertical position to an alpha value (transparency)
+  let alpha = map(mouseY, 0, height, 0, 255);
+  
+  // Set the text color with the calculated alpha value
+  fill(0, 0, 0, 255 - alpha); // Black color, with fading effect
+  
+  // Draw the text in the center of the canvas
+  text(message, width / 2, height / 2);
+}
